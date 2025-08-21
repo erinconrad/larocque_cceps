@@ -36,7 +36,7 @@ all_vars_reg2 = all_vars_reg2(~all_vars_reg2.stim_sz,:); %takes out CCEPS which 
 outlier_cfg.do_outliers = 0;
 outlier_cfg.thr_fac = 10;
 outlier_cfg.fancy=1;
-do_plot = 1; threshold = 0; % at first, threshold above 1
+do_plot = 0; threshold = 0; % at first, threshold above 1
 
 all_vars_reg2.BL_mean_corr_abs = abs(all_vars_reg2.BL_mean_corr);
 all_vars_reg2 = all_vars_reg2(~isnan(all_vars_reg2.Distance),:);
@@ -47,7 +47,7 @@ all_vars_reg2.BL_mean_corr_abs = abs(all_vars_reg2.BL_mean_corr);
 % now repeat for BL values
 do_plot = 0; threshold = []; % already thresholded - no need to re-threshold
 all_vars_reg2(all_vars_reg2.BL_mean_corr==1,:)=[];
-all_vars_reg2 = calculateResidualsForField(all_vars_reg2, 'BL_mean_corr_abs', threshold, outlier_cfg, do_plot,names);
+all_vars_reg2 = calculateResidualsForField(all_vars_reg2, 'BL_mean_corr_abs', threshold, outlier_cfg, do_plot);
 
 % Making one "middle" category for in-out and out-in
 all_vars_reg2.SOZ_crossover = zeros(size(all_vars_reg2.stim_matter));

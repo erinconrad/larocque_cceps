@@ -47,7 +47,7 @@ all_vars_reg2.BL_mean_corr_abs = abs(all_vars_reg2.BL_mean_corr);
 % now repeat for BL values
 do_plot = 0; threshold = []; % already thresholded - no need to re-threshold
 all_vars_reg2(all_vars_reg2.BL_mean_corr==1,:)=[];
-all_vars_reg2 = calculateResidualsForField(all_vars_reg2, 'BL_mean_corr_abs', threshold, outlier_cfg, do_plot,names);
+all_vars_reg2 = calculateResidualsForField(all_vars_reg2, 'BL_mean_corr_abs', threshold, outlier_cfg, do_plot);
 
 % Making one "middle" category for in-out and out-in
 all_vars_reg2.SOZ_crossover = zeros(size(all_vars_reg2.stim_matter));

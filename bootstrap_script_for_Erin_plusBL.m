@@ -39,12 +39,12 @@ do_plot = 1; threshold = 1; % at first, threshold above 1
 all_vars_reg2.BL_mean_corr_abs = abs(all_vars_reg2.BL_mean_corr);
 all_vars_reg2 = all_vars_reg2(~isnan(all_vars_reg2.Distance),:);
 
-all_vars_reg2 = calculateResidualsForField(all_vars_reg2, 'RMS', threshold, outlier_cfg, do_plot,names);
+all_vars_reg2 = calculateResidualsForField(all_vars_reg2, 'RMS', threshold, outlier_cfg, do_plot);
 all_vars_reg2.BL_mean_corr_abs = abs(all_vars_reg2.BL_mean_corr);
 
 % now repeat for BL values
 do_plot = 0; threshold = []; % already thresholded - no need to re-threshold
-all_vars_reg2 = calculateResidualsForField(all_vars_reg2, 'BL_mean_corr_abs', threshold, outlier_cfg, do_plot,names);
+all_vars_reg2 = calculateResidualsForField(all_vars_reg2, 'BL_mean_corr_abs', threshold, outlier_cfg, do_plot);
 
 
 c=1;
