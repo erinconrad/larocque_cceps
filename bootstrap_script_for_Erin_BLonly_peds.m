@@ -7,7 +7,7 @@ rng("default")
 fprintf('\nInitialized RNG\n');
 nboot = 1e3;
 
-file2analyze = 'all_vars_peds_BL_06022025.mat'; % now we can use HUP267 - previously case mismatch error
+file2analyze = '../data/all_vars_peds_BL_06022025.mat'; % now we can use HUP267 - previously case mismatch error
 load(file2analyze)
 load('duplicate_rows_for_peds_baseline.mat')
 remove_WM_resp = 1;
