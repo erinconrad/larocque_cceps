@@ -9,7 +9,7 @@ nboot = 1e3;
 
 file2analyze = '../data/all_vars_peds_BL_06022025.mat'; % now we can use HUP267 - previously case mismatch error
 load(file2analyze)
-load('duplicate_rows_for_peds_baseline.mat')
+load('../data/duplicate_rows_for_peds_baseline.mat')
 remove_WM_resp = 1;
 init_threshold = 1;
 
