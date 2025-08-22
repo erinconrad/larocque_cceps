@@ -86,7 +86,7 @@ for i = 1:nboot
     glme = fitglme(newtab,['bootstrapped ~ 1 + Distance + SOZ_resp + SOZ_stim + SOZ_resp:SOZ_stim + (1|sub_resp_ch) + (1|sub_stim_ch) + (1|substr)']);
     store_coefs_randfx(i,:) = array2table(fixedEffects(glme)');
     if mod(i,100)==0
-        save(['../output/RMS_reg_residuals_CHRAND_' file2analyze '_bootstrapping_prog_0825.mat'],'store_coefs_randfx','newtab','glme','-mat')
+        save(['../output/RMS_reg_residuals_CHRAND_' 'main_peds' '_bootstrapping_prog_0825.mat'],'store_coefs_randfx','newtab','glme','-mat')
     end
 end
 
