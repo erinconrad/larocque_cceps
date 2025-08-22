@@ -74,6 +74,7 @@ all_vars_reg2.SOZ_crossover(all_vars_reg2.SOZ_resp==1 & all_vars_reg2.SOZ_stim==
 all_vars_reg2(logical(to_remove),:) = [];
 
 col_names = {'BL_mean_corr_abs_residuals','RMS_residuals'};%,'RMS_unscaled_residuals','RMS_BL_residuals','RMS_trueBL_residuals'}; % + BL_mean_corr_abs_residuals
+c = 1;
 col_name = col_names{c};
 %make sure it treats the SOZ as a category, since it now has 0,1,2 values
 all_vars_reg2.SOZ_crossover_cat = categorical(all_vars_reg2.SOZ_crossover);
