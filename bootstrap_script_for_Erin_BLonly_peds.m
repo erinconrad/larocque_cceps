@@ -79,6 +79,8 @@ col_name = col_names{c};
 all_vars_reg2.SOZ_crossover_cat = categorical(all_vars_reg2.SOZ_crossover);
    
 small_tab = all_vars_reg2(:,{'Distance','SOZ_crossover_cat','substr','sub_stim_ch','sub_resp_ch','subject','BL_mean_corr_abs_residuals'});
+
+clear all_vars_store all_vars_reg2
 glme = fitglme(small_tab,[col_name ' ~ 1 + Distance + SOZ_crossover_cat + (1|sub_resp_ch) + (1|sub_stim_ch) + (1|substr)']);
 
 small_tab.RMS_fitted = fitted(glme);

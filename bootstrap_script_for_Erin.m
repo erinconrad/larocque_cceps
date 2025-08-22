@@ -47,6 +47,8 @@ col_names = {'RMS_residuals'};%,'RMS_unscaled_residuals','RMS_BL_residuals','RMS
 col_name = col_names{c};
 
 small_tab = all_vars_reg2(:,{'RMS_residuals','Distance','SOZ_resp','SOZ_stim','substr','sub_stim_ch','sub_resp_ch','subject'});
+
+clear all_vars_store all_vars_reg2
 glme = fitglme(small_tab,[col_name ' ~ 1 + Distance + SOZ_resp + SOZ_stim + SOZ_resp:SOZ_stim + (1|sub_resp_ch) + (1|sub_stim_ch) + (1|substr)']);
 
 
